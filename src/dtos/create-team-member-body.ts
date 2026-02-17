@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, Length } from 'class-validator';
 
-export class CreateTeamMamberBody {
+export class CreateTeamMemberBody {
+  @Length(5, 100)
   @IsNotEmpty({
     message: 'The member name should not be empty.',
   })
